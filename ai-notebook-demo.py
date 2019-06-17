@@ -14,7 +14,7 @@
 # ---
 
 # %% [markdown]
-# # Training a basic CNN with Ignite on Google Colaboratory
+# # Training a basic CNN with Ignite on Google AI Platform Notebook
 # Toulouse Data Science 18/06/2019
 
 # %% [markdown]
@@ -31,27 +31,13 @@
 
 # %%
 # installation of custom dependencies
-# !pip3 install tqdm pytorch-ignite
+# %pip install tqdm pytorch-ignite
 
 # %% [markdown]
-# ## Download data from google drive
+# ## Download data from GCS
 
 # %%
-# We use the mount as storage option but there are many
-# See https://colab.research.google.com/notebooks/io.ipynb#scrollTo=RWSJpsyKqHjH for reference
-try:
-    import subprocess
-    from google.colab import drive
-    drive.mount('/content/gdrive')
-except ImportError:
-    pass
-
-# %%
-# if we are on google colab we run this to get data
-# !cp /content/gdrive/My\ Drive/eurosat.tar.gz .
-
-# %%
-# else we run this
+# get data
 # !gsutil -m cp -r gs://fchouteau-storage/eurosat.tar.gz .
 
 # %%
