@@ -20,5 +20,16 @@ gcloud compute instances create $INSTANCE_NAME \
 https://github.com/gclouduniverse/gcp-notebook-executor
 https://github.com/gclouduniverse/nova-jupyterlab-extensions
 
-# How to launch from the CLI & get jupyterlab
+### How to launch from the CLI & get jupyterlab
+
 https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2
+
+## Slides
+
+```bash
+reveal-md tds.md -w --css static/reveal.css  --highlight-theme solarized-dark
+
+reveal-md tds.md --css static/reveal.css --static=site --static-dirs=static  --highlight-theme solarized-dark
+
+reveal-md tds.md --print slides.pdf -css static/reveal.css --highlight-theme solarized-dark
+```
