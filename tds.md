@@ -79,7 +79,7 @@ I didn't check every alternative product: Some may be better
 
 <img src="static/open_in_colab.png" alt="" style="background:none; border:none; box-shadow:none;"/>
 
----
+--
 
 ### WTF is... Google Colab ?
 
