@@ -1,6 +1,7 @@
-.ipynb_checkpoints
-*.ipynb
 .idea
 .vscode
+site
 eurosat
 eurosat.tar.gz
+.ipynb_checkpoints
+*.ipynb

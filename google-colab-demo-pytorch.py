@@ -47,12 +47,8 @@ except ImportError:
     pass
 
 # %%
-# if we are on google colab we run this to get data
+# We are on google colab, we use gdrive
 # !cp /content/gdrive/My\ Drive/eurosat.tar.gz .
-
-# %%
-# else we run this
-# !gsutil -m cp -r gs://fchouteau-storage/eurosat.tar.gz .
 
 # %%
 # !tar -zxf eurosat.tar.gz
@@ -91,7 +87,7 @@ random.seed(2019)
 BATCH_SIZE = 64
 LEARNING_RATE = 0.01
 MOMENTUM = 0.9
-MAX_EPOCHS = 5
+MAX_EPOCHS = 2
 
 # %% [markdown]
 # ## Datasets and dataloaders definitions
@@ -345,3 +341,14 @@ plt.ylabel('Precision')
 plt.title('Extension of Precision-Recall curve to multi-class')
 plt.legend(lines, labels, loc=(0, -1.0), prop=dict(size=14))
 plt.show()
+
+# %%
+# Save model locally using colab features
+try:
+    from google.colab import files
+
+    torch.save(model.state_dict(), "./model.pt")
+    files.download('./model.pt')
+
+except ImportError:
+    pass

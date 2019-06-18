@@ -67,11 +67,16 @@ Florient CHOUTEAU
 
 This talk is not sponsored by Google ;)
 
-I didn't check every alternative product: Some may be better
+There may be better alternatives: Feel free to comment after :)
+
+Have you heard of the "demo effect" ?
 
 ---
 
 ## Colaboratory
+
+https://colab.research.google.com
+
 
 <img src="static/colab.png" alt="" style="background:none; border:none; box-shadow:none;"/>
 
@@ -87,47 +92,47 @@ I didn't check every alternative product: Some may be better
 
 - Full python data science environment
 
-- Somewhat long duration (12h at most)
+- 12h max session lifetime
 
 --
 
 ### Is it for YOU ? 
 
-- Students, self-learning
+- Students, people learning ML/DS
 
-- Quick experiments / colaboration
+- Teachers, share courses, get assignments
 
---
-
-### Interesting Features 
-
-- Access to google drive data
-
-- Can upload / download directly from colab 
+- Quick experiments / sharing 
 
 --
 
-### Interesting Features
+### Nice features
 
-- GPU ! (Nvidia T4 = 3000$)
+- Can use your data: gdrive, gsheet, local filesystem
 
-- Collaboration ! (sharing notebooks)
+- Jupyter-based: All the power of interactive & visualisations
 
-- From github to colab
-    - In github: https://github.com/{repo}/
-    - In colab: https://colab.research.google.com/{user}/{repo}/{url_to_notebook}
+- You can `apt-get` and `pip install` what you need
 
 --
 
-### Demo !
+### Nicer features
 
-- End-to-end training w/ GPU. Pytorch and ignite (**spoilers**)
+- GPU ! (Nvidia Tesla T4, 16 GB GPU RAM = 3000$)
 
-- Data on Google Drive
+- Collaboration ! (share and co-edit notebooks)
 
-- Saving model locally
+- Open notebook from github to colab ! 
 
-https://colab.research.google.com
+--
+
+### Demo Time
+
+- End-to-end training w/ GPU. pytorch and ignite (**spoilers**)
+
+- Notebook on github, Data on Google Drive
+
+- https://colab.research.google.com
 
 --
 
@@ -137,9 +142,12 @@ https://colab.research.google.com
 
 - Full control over installation and data
 
+
 ---
 
-## Deep Learning VM / AI Platform Notebook
+## GCP Deep Learning VM / AI Platform Notebook
+
+https://cloud.google.com/deep-learning-vm/
 
 <img src="static/aiplatform.png" alt="" width="200px" height="200px" style="background:none; border:none; box-shadow:none;"/>
 
@@ -147,7 +155,7 @@ https://colab.research.google.com
 
 ### WTF is... AI Platform Notebook ?
 
-- Pre configured Cloud Virtual Machines (Google Compute Engine)
+- Pre configured **paid** Cloud Virtual Machines (Google Compute Engine)
 
 - With jupyter lab auto launched & ready
 
@@ -163,9 +171,9 @@ https://colab.research.google.com
 
 ### 2 different workflows
 
-A) Jupyter only ("AI Notebook")
+1. Jupyter only ("AI Notebook")
 
-B) Pre-configured instance for Data Science ("Deep Learning VM")
+2. Pre-configured instance for Data Science ("Deep Learning VM")
 
 --
 
@@ -207,11 +215,15 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
 
 ### Advanced Usage (not covered here)
 
-https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2
+- [Extensive tutorial](https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2)
 
-- Preemptible (> 5x less expensive, run only 24h)
+- Use "preemptible" (spot in AWS terminology)*
+
 - CLI creation for more customization
-- Scheduled execution w/ papermill
+
+- Scheduled notebooks execution w/ papermill
+
+*5x less expensive, run only 24h
 
 ---
 
@@ -248,7 +260,7 @@ https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f
   </tr>
   <tr>
     <td>**free**</td>
-    <td>**paid** (by minute of computing + storage)</td>
+    <td>**[paid](https://cloud.google.com/compute/pricing)** (by minute of computing + storage)</td>
   </tr>
 </table> 
 
@@ -256,13 +268,13 @@ https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f
 
 ### Alternatives
 
-- Kaggle Kernels (free ! Alternative to colab)
+- [Kaggle Kernels](https://www.kaggle.com/kernels): for kaggle, colab, free, 9h, P100
 
-- Amazon Sagemaker
+- [Amazon Sagemaker](https://aws.amazon.com/sagemaker/): can someone tell me about it ?
 
-- A lot of companies with to-rent servers
+- A lot of smaller entities... [floydhub](https://www.floydhub.com/)...
 
-- Build your own machine ? (opinion: last step for individual use)
+- Build your own machine ? opinion: last step for individual use (be sure of what you need !)
 
 --
 

@@ -56,7 +56,7 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
 ```bash
 reveal-md tds.md -w --css static/reveal.css
 
-reveal-md tds.md --css static/reveal.css --static=site --static-dirs=static  --highlight-theme solarized-dark
+reveal-md tds.md --css static/reveal.css --static=site --static-dirs=static
 
-reveal-md tds.md --print slides.pdf -css static/reveal.css --highlight-theme solarized-dark
+reveal-md tds.md --print slides.pdf -css static/reveal.css
 ```
