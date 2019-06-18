@@ -33,7 +33,7 @@ Florient CHOUTEAU
 
     - Delair, Magellium / Airbus Intelligence (**spoilers**), Airbus DS...
 
-    - torch, tf, keras, pytorch, ...
+    - torch, tf, keras, pytorch, ... **a lot of time spent installing instances**
 
 - Contact: [@foxchouteau](https://twitter.com/foxchouteau) or on Slack
 
@@ -68,8 +68,6 @@ Florient CHOUTEAU
 This talk is not sponsored by Google ;)
 
 There may be better alternatives: Feel free to comment after :)
-
-Have you heard of the "demo effect" ?
 
 ---
 
@@ -128,7 +126,7 @@ https://colab.research.google.com
 
 ### Demo Time
 
-- End-to-end training w/ GPU. pytorch and ignite (**spoilers**)
+- End-to-end training w/ GPU. pytorch and [pytorch-ignite](https://github.com/pytorch/ignite)
 
 - Notebook on github, Data on Google Drive
 
@@ -138,10 +136,11 @@ https://colab.research.google.com
 
 ### Limitations
 
-- Long calculations w/ guarantees
+- Long calculations w/ guarantees (you can checkpoint your models on colab though)
+
+- Code syncing / huge codebase & huge datasets
 
 - Full control over installation and data
-
 
 ---
 
@@ -150,6 +149,16 @@ https://colab.research.google.com
 https://cloud.google.com/deep-learning-vm/
 
 <img src="static/aiplatform.png" alt="" width="200px" height="200px" style="background:none; border:none; box-shadow:none;"/>
+
+--
+
+### Google Cloud Platform
+
+- Cloud Provider, very nice VM instances options
+
+- 300$ free, paid for GPU and unlocked bandwidth
+
+- Rather easy to use for ML / DS
 
 --
 
@@ -193,9 +202,11 @@ https://console.cloud.google.com
 
 - Executing a notebook on a deep-learning-vm
 
+- Install this: https://github.com/gclouduniverse/gcp-notebook-executor
+
 ```
-INPUT_NOTEBOOK="gs://fchouteau-storage/ai-notebook-demo.ipynb"
-GCP_BUCKET="gs://fchouteau-storage/runs"
+INPUT_NOTEBOOK="gs://{your-storage}/ai-notebook-demo.ipynb"
+GCP_BUCKET="gs://{your-storage}/runs"
 IMAGE_FAMILY_NAME="pytorch-latest-gpu"
 INSTANCE_TYPE="n1-standard-8"
 GPU_TYPE="k80"
@@ -220,8 +231,6 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
 - Use "preemptible" (spot in AWS terminology)*
 
 - CLI creation for more customization
-
-- Scheduled notebooks execution w/ papermill
 
 *5x less expensive, run only 24h
 
@@ -278,4 +287,4 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
 
 --
 
-### Thank you ! 
+### Thank you !

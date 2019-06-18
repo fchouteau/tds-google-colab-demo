@@ -48,6 +48,7 @@ except ImportError:
 
 # %%
 # We are on google colab, we use gdrive
+# First you should download the dataset somewhere: https://drive.google.com/open?id=1dftmi50__aE2GhW6eB0C8DToFnJD7l2e
 # !cp /content/gdrive/My\ Drive/eurosat.tar.gz .
 
 # %%

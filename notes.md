@@ -1,11 +1,16 @@
 # Google Colab & Deep Learning VM
 
+## Eurosat Dataset
+
+http://madm.dfki.de/downloads
+https://drive.google.com/open?id=1dftmi50__aE2GhW6eB0C8DToFnJD7l2e
+
 ## Google Deep Learning VM
 
 ```bash
 export IMAGE_FAMILY="pytorch-latest-gpu"
 export ZONE="europe-west1-d"
-export INSTANCE_NAME="fch-tds"
+export INSTANCE_NAME="tds-demo"
 
 gcloud compute instances create $INSTANCE_NAME \
   --zone=$ZONE \
@@ -33,8 +38,8 @@ git clone https://github.com/gclouduniverse/gcp-notebook-executor.git --branch v
 cd gcp-notebook-executor
 source utils.sh
 
-INPUT_NOTEBOOK="gs://fchouteau-storage/ai-notebook-demo.ipynb"
-GCP_BUCKET="gs://fchouteau-storage/runs"
+INPUT_NOTEBOOK="gs://{your-storage}/ai-notebook-demo.ipynb"
+GCP_BUCKET="gs://{your-storage}/runs"
 IMAGE_FAMILY_NAME="pytorch-latest-gpu"
 INSTANCE_TYPE="n1-standard-8"
 GPU_TYPE="k80"

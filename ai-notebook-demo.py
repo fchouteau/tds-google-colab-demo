@@ -38,7 +38,8 @@
 
 # %%
 # get data
-# !gsutil -m cp -r gs://fchouteau-storage/eurosat.tar.gz .
+# First you should download the dataset somewhere: https://drive.google.com/open?id=1dftmi50__aE2GhW6eB0C8DToFnJD7l2e
+# !gsutil -m cp -r gs://{your-storage}/eurosat.tar.gz .
 
 # %%
 # !tar -zxf eurosat.tar.gz
