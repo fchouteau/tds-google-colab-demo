@@ -1,38 +1,199 @@
-# Google Colab & Deep Learning VM
+---
+title: Google Colab & AI Notebook
+theme: solarized
+highlightTheme: solarized-dark
+separator: ---
+verticalSeparator: --
+revealOptions:
+    transition: 'fade'
+    transitionSpeed: 'default'
+    controls: false
+---
 
-## Google Deep Learning VM
+# Google Colaboratory
+#  & AI Notebook
 
-```bash
-export IMAGE_FAMILY="pytorch-latest-gpu"
-export ZONE="europe-west1-d"
-export INSTANCE_NAME="fch-tds"
+## Data Science in the cloud, the easy way
 
-gcloud compute instances create $INSTANCE_NAME \
-  --zone=$ZONE \
-  --image-family=$IMAGE_FAMILY \
-  --image-project=deeplearning-platform-release \
-  --maintenance-policy=TERMINATE \
-  --accelerator="type=nvidia-tesla-p100,count=1" \
-  --metadata="install-nvidia-driver=True" \
-  --boot-disk-size=120GB \
-  --preemptible
+Toulouse Data Science #38 - June 18th 2019
+
+Florient CHOUTEAU
+
+--
+
+### about.md
+
+<img src="static/red-panda.png" alt="" width="168px" height="146px" style="background:none; border:none; box-shadow:none; position: fixed; top: 10%; right: 20%;"/>
+
+- ML Engineer @ Airbus Defence and Space (we are hiring !)
+
+- Training Neural Networks since 2016 
+
+    - Remote sensing imagery
+
+    - Delair, Magellium / Airbus Intelligence (**spoilers**), Airbus DS...
+
+    - torch, tf, keras, pytorch, ...
+
+- Contact: [@foxchouteau](https://twitter.com/foxchouteau) or on Slack
+
+--
+
+### Who started learning data science recently ?
+
+--
+
+### Who works in data science ?
+
+--
+
+### Who teaches data science classes ?
+
+--
+
+### TL;DR
+
+- easy access to configured development environment for ML
+
+- from Google but not limited to their tech
+
+- jupyter-based products
+
+- one free, one paid: different use cases, similar principles
+
+--
+
+### Disclaimer
+
+This talk is not sponsored by Google ;)
+
+There may be better alternatives: Feel free to comment after :)
+
+Have you heard of the "demo effect" ?
+
+---
+
+## Colaboratory
+
+https://colab.research.google.com
+
+
+<img src="static/colab.png" alt="" style="background:none; border:none; box-shadow:none;"/>
+
+--
+
+<img src="static/open_in_colab.png" alt="" style="background:none; border:none; box-shadow:none;"/>
+
+--
+
+### WTF is... Google Colab ?
+
+- Jupyter Notebook + Google Drive
+
+- Full python data science environment
+
+- 12h max session lifetime
+
+--
+
+### Is it for YOU ? 
+
+- Students, people learning ML/DS
+
+- Teachers, share courses, get assignments
+
+- Quick experiments / sharing 
+
+--
+
+### Nice features
+
+- Can use your data: gdrive, gsheet, local filesystem
+
+- Jupyter-based: All the power of interactive & visualisations
+
+- You can `apt-get` and `pip install` what you need
+
+--
+
+### Nicer features
+
+- GPU ! (Nvidia Tesla T4, 16 GB GPU RAM = 3000$)
+
+- Collaboration ! (share and co-edit notebooks)
+
+- Open notebook from github to colab ! 
+
+--
+
+### Demo Time
+
+- End-to-end training w/ GPU. pytorch and ignite (**spoilers**)
+
+- Notebook on github, Data on Google Drive
+
+- https://colab.research.google.com
+
+--
+
+### Limitations
+
+- Long calculations w/ guarantees
+
+- Full control over installation and data
+
+
+---
+
+## GCP Deep Learning VM / AI Platform Notebook
+
+https://cloud.google.com/deep-learning-vm/
+
+<img src="static/aiplatform.png" alt="" width="200px" height="200px" style="background:none; border:none; box-shadow:none;"/>
+
+--
+
+### WTF is... AI Platform Notebook ?
+
+- Pre configured **paid** Cloud Virtual Machines (Google Compute Engine)
+
+- With jupyter lab auto launched & ready
+
+- Papermill pre installed for scheduling
+
+--
+
+### Available configurations
+
+<img src="static/config.png" alt="" style="background:none; border:none; box-shadow:none;"/>
+
+--
+
+### 2 different workflows
+
+1. Jupyter only ("AI Notebook")
+
+2. Pre-configured instance for Data Science ("Deep Learning VM")
+
+--
+
+### Demo 1: "AI Platform Notebook"
+
+- Creating an instance
+
+- Connecting to jupyter lab (with or without ssh !)
+
+https://console.cloud.google.com
+
+--
+
+### Demo 2: "Deep Learning VM"
+
+- Using the DL VM as a preconfigured headless code runner
+
+- Executing a notebook on a deep-learning-vm
+
 ```
-https://github.com/gclouduniverse/gcp-notebook-executor
-https://github.com/gclouduniverse/nova-jupyterlab-extensions
-
-### How to launch from the CLI & get jupyterlab
-
-https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2
-
-### Google Cloud Notebook Executor
-
-```bash
-# You can use any branch but this article been tested with 0.1.2 only
-git clone https://github.com/gclouduniverse/gcp-notebook-executor.git --branch v0.1.3
-
-cd gcp-notebook-executor
-source utils.sh
-
 INPUT_NOTEBOOK="gs://fchouteau-storage/ai-notebook-demo.ipynb"
 GCP_BUCKET="gs://fchouteau-storage/runs"
 IMAGE_FAMILY_NAME="pytorch-latest-gpu"
@@ -50,13 +211,71 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
                  -c "${GPU_COUNT}"
 ```
 
+--
 
-## Slides
+### Advanced Usage (not covered here)
 
-```bash
-reveal-md tds.md -w --css static/reveal.css
+- [Extensive tutorial](https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2)
 
-reveal-md tds.md --css static/reveal.css --static=site --static-dirs=static
+- Use "preemptible" (spot in AWS terminology)*
 
-reveal-md tds.md --print slides.pdf -css static/reveal.css
-```
+- CLI creation for more customization
+
+- Scheduled notebooks execution w/ papermill
+
+*5x less expensive, run only 24h
+
+---
+
+## Conclusion
+
+-- 
+
+### TL;DR (bis)
+
+ <table style="width:100%">
+  <tr>
+    <th>Google Colab</th>
+    <th>Google AI Notebook</th>
+  </tr>
+  <tr>
+    <td>Learn, experiment </td>
+    <td>Can scale compute</td>
+  </tr>
+  <tr>
+    <td>Single notebook / Clone from github</td>
+    <td>Upload own code</td>
+  </tr>
+  <tr>
+    <td>Simple jupyter env.</td>
+    <td>Full jupyter lab or SSH access</td>
+  </tr>
+  <tr>
+    <td>Data from anywhere / google drive</td>
+    <td>Fully owned cloud environment</td>
+  </tr>
+  <tr>
+    <td>Short runtimes</td>
+    <td>Cheap 1d runtimes or arbitrary runtimes</td>
+  </tr>
+  <tr>
+    <td>**free**</td>
+    <td>**[paid](https://cloud.google.com/compute/pricing)** (by minute of computing + storage)</td>
+  </tr>
+</table> 
+
+--
+
+### Alternatives
+
+- [Kaggle Kernels](https://www.kaggle.com/kernels): for kaggle, colab, free, 9h, P100
+
+- [Amazon Sagemaker](https://aws.amazon.com/sagemaker/): can someone tell me about it ?
+
+- A lot of smaller entities... [floydhub](https://www.floydhub.com/)...
+
+- Build your own machine ? opinion: last step for individual use (be sure of what you need !)
+
+--
+
+### Thank you ! 
