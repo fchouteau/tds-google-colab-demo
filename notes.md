@@ -56,7 +56,7 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
 ```bash
 reveal-md README.md -w --css static/reveal.css
 
-cp README.md tds.md && reveal-md tds.md --css static/reveal.css --static=site --static-dirs=static
+cp README.md tds.md && reveal-md tds.md --css static/reveal.css --static=docs --static-dirs=static
 
 cp README.md tds.md && reveal-md tds.md --print slides.pdf --css static/reveal.css
 ```
