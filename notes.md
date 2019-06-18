@@ -54,9 +54,9 @@ execute_notebook -i "${INPUT_NOTEBOOK}" \
 ## Slides
 
 ```bash
-reveal-md README.md -w --css static/reveal.css
+reveal-md README.md -w --css static/style.css
 
-cp README.md tds.md && reveal-md tds.md --css static/reveal.css --static=docs --static-dirs=static --absolute-url https://fchouteau.github.io/tds-google-colab-demo
+cp README.md tds.md && reveal-md tds.md --css static/style.css --static=docs --static-dirs=static --absolute-url https://fchouteau.github.io/tds-google-colab-demo
 
 cp README.md tds.md && reveal-md tds.md --print slides.pdf --css static/reveal.css
 ```
