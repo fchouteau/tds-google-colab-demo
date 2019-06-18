@@ -173,6 +173,21 @@ def get_data_loaders(train_dataset, val_dataset):
 
 
 # %% [markdown]
+# ## Look at some data
+
+# %%
+# plot some data
+from matplotlib import pyplot as plt
+
+train_dataset = EurosatDataset.from_fold(data_dir="./eurosat", fold="train")
+for i in range(5):
+    x, y = train_dataset[i]
+    plt.figure()
+    plt.imshow(x)
+    print(train_dataset.classes[y])
+    plt.show()
+
+# %% [markdown]
 # ## Model definition
 
 
